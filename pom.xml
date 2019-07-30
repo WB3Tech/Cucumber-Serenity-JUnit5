@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>wb3</groupId>
-    <artifactId>modular-java</artifactId>
+    <artifactId>cucumber-serenity-junit5</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 

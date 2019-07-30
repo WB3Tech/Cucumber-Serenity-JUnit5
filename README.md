@@ -1,7 +1,7 @@
 # Cucumber, Serenity, & JUnit 5
 
 
-##What Is This?
+## What Is This?
 
 I wanted to see how to integrate Cucumber, Serenity, and JUnit 5.  
 
@@ -9,7 +9,7 @@ The goal was to have maven kick off the unit tests and BDD test. So far, the uni
 
 The BDD tests are not working.
 
-###Help!!!
+### Help!!!
 
 Problem: When you run `mvn clean verify` on this project you get the following error:
 

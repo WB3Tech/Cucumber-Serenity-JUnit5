@@ -1,19 +1,25 @@
 # Cucumber, Serenity, & JUnit 5
 
 ## What Is This?
+Integration of Cucumber, Serenity, and JUnit 5. Maven kicks off the unit tests and functional test.
+ 
+JUnit 5 isn't completely implemented.  I'm using the jupiter-vintage-engine for the Cucumber TestRunner classes. 
 
-I wanted to see how to integrate Cucumber, Serenity, and JUnit 5.  
+Instead of using the @ExtendWith(), I'm using the @RunWith(); @ExtendWith() replaces @RunWith in JUnit5. JUnit 5 features are available for the unit tests.
+ 
+I increased the Java version to 12.
 
-The goal was to have maven kick off the unit tests and BDD test. So far, the units tests work.
+### Things I Learned
+Setting up this demo was a doozy.  You can read about the issues I faced on stackoverflow: https://stackoverflow.com/questions/57279008/runwithcucumberwithserenity-class-throws-noclassdeffound-cucumber-runtime-jun/57281364#57281364
 
-The BDD tests are not working, and when I get them to work, their outcomes are not being reported via Serenity.
+To ensure this project runs, make sure not to keep the versions as follows:
+- serenity-cucumber4 - 1.0.15
+- cucumber-java - 4.2.0
 
-### Help!!!
+### View the Serenity Report
+To view the report, you can:
 
-Problem: When you run `mvn clean verify` on this project you get the following error:
-
-`HelloService_BDD » NoClassDefFound cucumber/runtime/junit/Assertions`
-
-If you change the `@RunWith(CucumberWithSerenity.class)` to `@RunWith(Cucumber.class)` in HelloService_BDD class, the error disappears and the tests run.  Although, as stated above, the results are not reported.
-
-
+1) View the HTML output at target/site/serenity/index.html
+2) Get a csv of the results at target/site/serenity/results.csv
+3) View an XML output at target/site/serenity/SERENITY-JUNIT[some-random-uuid]
+4) View a summary output at target/site/serenity/summary.txt

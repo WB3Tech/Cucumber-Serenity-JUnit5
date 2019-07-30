@@ -11,13 +11,15 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <cucumber.version>4.7.1</cucumber.version>
+        <cucumber.version>4.2.0</cucumber.version>
         <junit-jupiter.version>5.5.1</junit-jupiter.version>
         <junit-vintage.version>5.5.1</junit-vintage.version>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <serenity-maven-plugin.version>2.0.60</serenity-maven-plugin.version>
-        <serenity-cucumber4.version>1.0.17</serenity-cucumber4.version>
+        <maven.compiler.source>12.0.2</maven.compiler.source>
+        <maven.compiler.target>12.0.2</maven.compiler.target>
+        <maven.compiler.target>12.0.2</maven.compiler.target>
+        <maven.compiler.release>12</maven.compiler.release>
+        <serenity-maven-plugin.version>2.0.47</serenity-maven-plugin.version>
+        <serenity-cucumber4.version>1.0.15</serenity-cucumber4.version>
         <serenity-core.version>2.0.63</serenity-core.version>
     </properties>
 
@@ -46,25 +48,11 @@
             <scope>test</scope>
         </dependency>
 
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-junit</artifactId>
-            <version>${cucumber.version}</version>
-            <scope>test</scope>
-        </dependency>
-
         <!-- Serenity -->
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-cucumber4</artifactId>
             <version>${serenity-cucumber4.version}</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>net.serenity-bdd</groupId>
-            <artifactId>serenity-core</artifactId>
-            <version>${serenity-core.version}</version>
             <exclusions>
                 <exclusion>
                     <groupId>io.cucumber</groupId>
@@ -76,15 +64,8 @@
 
         <dependency>
             <groupId>net.serenity-bdd</groupId>
-            <artifactId>serenity-screenplay</artifactId>
-            <version>2.0.61</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>net.serenity-bdd</groupId>
-            <artifactId>serenity-screenplay-webdriver</artifactId>
-            <version>2.0.61</version>
+            <artifactId>serenity-core</artifactId>
+            <version>${serenity-core.version}</version>
             <scope>test</scope>
         </dependency>
 
@@ -100,7 +81,7 @@
                 <configuration>
                     <source>${maven.compiler.source}</source>
                     <target>${maven.compiler.target}</target>
-                    <release>8</release>
+                    <release>${maven.compiler.release}</release>
                 </configuration>
             </plugin>
 
